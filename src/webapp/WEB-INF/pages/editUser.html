@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Изменить пользователя</title>
+    <style>
+        h1 {
+            text-align: center;
+
+            margin-bottom: 20px;
+        }
+        form {
+            width: 300px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            text-align: center;
+
+        }
+        form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        form input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+<h1>Изменить пользователя</h1>
+<form action="#" th:action="@{/edit}" method="post">
+    <input type="hidden" name="id" th:value="${user.id}" />
+
+    <label for="name">Имя:</label>
+    <input type="text" id="name" name="name" th:value="${user.name}" /><br/>
+
+    <label for="lastName">Фамилия:</label>
+    <input type="text" id="lastName" name="lastName" th:value="${user.lastName}" /><br/>
+
+    <label for="age">Возраст:</label>
+    <input type="number" id="age" name="age" th:value="${user.age}" /><br/>
+
+    <button type="submit">Сохранить изменения</button>
+</form>
+<div class="center">
+    <a href="/">Вернуться назад</a>
+</div>
+</body>
+</html>
